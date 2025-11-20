@@ -1,3 +1,124 @@
-img.movie-detail-img {
-  max-width: 500px;
+* {
+  font-family: Calibri, sans-serif;
+}
+
+.movie-detail {
+  padding: 30px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.movie-detail h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.trailer-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.trailer-section iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-row {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+.info-row label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info-row p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.btn-back {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #5a6268;
+}
+
+.actor-highlight {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #d3d3d3;
+  border-radius: 6px;
+  border-left: 4px solid #ffb300;
+}
+
+.actor-highlight p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.actor-highlight-text {
+  font-family: Calibri, sans-serif;
+  font-weight: bold;
+  color: #333;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .movie-detail h1 {
+    font-size: 24px;
+  }
+
+  .trailer-section iframe {
+    width: 100%;
+    height: 300px;
+  }
 }

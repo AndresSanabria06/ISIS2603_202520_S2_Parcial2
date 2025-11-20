@@ -1,4 +1,4 @@
 # Parcial Práctico 2
 
-- Nombre:
-- código:
+- Nombre: Andrés Javier Sanabria Garzón
+- código: 202411507

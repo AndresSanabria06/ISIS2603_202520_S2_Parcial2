@@ -1,18 +1,56 @@
 <div class="movie-detail" *ngIf="movie">
-  <h2>{{ movie.titulo }}</h2>
-  <iframe width="420" height="315" [src]="safeTrailerUrl" *ngIf="safeTrailerUrl">
-  </iframe>
-  <p><strong>Sinopsis:</strong> {{ movie.sinopsis }}</p>
-  <p><strong>Calificación:</strong> {{ movie.calificacion }}/10</p>
-  <h3>Actores</h3>
-  <app-actor-list [actors]="movie.actores"></app-actor-list>
+  <h1>{{ movie.titulo }}</h1>
+  
+  <div class="detail-container">
+    <div class="trailer-section">
+      <iframe
+        width="100%"
+        height="400"
+        [src]="safeTrailerUrl"
+        *ngIf="safeTrailerUrl"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <h3>Generos</h3>
-  <ol>
-    @for(genero of movie.generos; track genero){
-    <li>
-      {{ genero }}
-    </li>
-    }
-  </ol>
+    <div class="info-section">
+      <div>
+        <label><strong>Sinopsis</strong></label>
+        <p>{{ movie.sinopsis }}</p>
+      </div>
+
+      <div>
+        <label><strong>Calificación</strong></label>
+        <p>{{ movie.calificacion }}/10</p>
+      </div>
+
+      <div>
+        <label><strong>Director</strong></label>
+        <p>{{ movie.director }}</p>
+      </div>
+
+      <div>
+        <label><strong>Duración</strong></label>
+        <p>{{ movie.duracion_minutos }} min</p>
+      </div>
+
+      <div>
+        <label><strong>Actores</strong></label>
+        <app-actor-list [actors]="movie.actores"></app-actor-list>
+        <div *ngIf="actorWithMostMovies" class="actor-highlight">
+          <p><strong> Actor destacado (más películas):</strong></p>
+          <p class="actor-highlight-text">{{ actorWithMostMovies.nombre }} - {{ actorWithMostMovies.peliculas }} películas</p>
+        </div>
+      </div>
+
+      <div>
+        <label><strong>Géneros</strong></label>
+        <p>{{ movie.generos.join(', ') }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="btn btn-back" (click)="goBack()">Regresar</button>
+  </div>
 </div>
